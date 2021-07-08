@@ -3,13 +3,16 @@ import asyncio
 from discord.ext import commands
 import random
 from random import randint
+import time
+import datetime
 
 class auto_fish(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-        self.daguildid = 00
+        self.daguildid = 0
         self.dank_memer_id = 270904126974590976
+        self.start_time = None
 
     @commands.command(name="To start the auto fish, type *pls fish* and itll begin.")
     async def _bruh(self, ctx):
@@ -27,8 +30,17 @@ class auto_fish(commands.Cog):
         if message.author.id not in [self.client.user.id, self.dank_memer_id]:
             return
         if "pls fish" in message.content.lower():
+            if self.start_time == None:
+                self.start_time = datetime.datetime.utcnow()
+            else:
+                delta_uptime = datetime.datetime.utcnow() - self.start_time
+                hours, remainder = divmod(int(delta_uptime.total_seconds()), 3600)
+                minutes, seconds = divmod(remainder, 60)
+                days, hours = divmod(hours, 24)
+                if hours == 1:
+                    print('Stopping Fishing incase of automod detection. Starting again in 15 minutes')
+                    await asyncio.sleep(900)
             the_time = random.randint(5, 10)
-            print(f'Sending fish in {the_time} seconds')
             await asyncio.sleep(the_time)
             await ctx.send('pls fish')
 
@@ -50,7 +62,6 @@ class auto_fish(commands.Cog):
             elif "b\ufeffi\ufeffg\ufeff \ufeffb\ufeffi\ufeffg\ufeff \ufefff\ufeffi\ufeffs\ufeffh\ufeffy\ufeff" in message.content:
                 await ctx.send("big big fishy")
             else:
-                await ctx.send('Couldnt auto answer.')
                 print(message.content.split(" "))
 
         else:
