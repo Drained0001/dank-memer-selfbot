@@ -1,0 +1,13 @@
+Dank memer selfbot
+Coded by Drained#0001
+
+Usage Tips:
+Use on a alt
+Dont spam in multiple channels (will lead to blacklist)
+
+Install all requirements in requirements.txt
+
+Do not redistribute as your own. All code was made and owned by Drained#0001
+https://github.com/Drained0001/dank-memer-selfbot/new/main
+
+To see command stuff, use command dm!help
