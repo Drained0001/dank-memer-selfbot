@@ -5,6 +5,11 @@ Usage Tips:
 Use on a alt
 Dont spam in multiple channels (will lead to blacklist)
 
+How To Use:
+Step 1. Put your discord token in the last line of main.py
+Step 2. Go to auto_fish.py and auto_hunt.py and change the "daguildid" variable to your guild id, to find out how to do that look it up
+step 3. Run main.py and use dm!help to see what to do
+
 Install all requirements in requirements.txt
 
 Do not redistribute as your own. All code was made and owned by Drained#0001
