@@ -6,7 +6,7 @@ import random
 class auto_hunt(commands.Cog):
     def __init__(self, client):
         self.client = client
-        self.daguildid = 828560582495305769
+        self.daguildid = 00
         self.dank_memer_id = 270904126974590976
 
     @commands.command(name="To start the auto hunt, type *pls hunt* and itll begin.")
