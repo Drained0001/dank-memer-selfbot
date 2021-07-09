@@ -7,8 +7,9 @@ Dont spam in multiple channels (will lead to blacklist)
 
 How To Use:
 Step 1. Put your discord token in the last line of main.py
-Step 2. Go to auto_fish.py and auto_hunt.py and change the "daguildid" variable to your guild id, to find out how to do that look it up
-step 3. Run main.py and use dm!help to see what to do
+Step 2. Go to cog files and change the "daguildid" variable to the guild you will be auto farming in
+step 3. Go to the cog files again and change the "channel" variable to the channel you will be auto farming in
+step 4. Run main.py and use dm!help to see what to do
 
 Install all requirements in requirements.txt
 
