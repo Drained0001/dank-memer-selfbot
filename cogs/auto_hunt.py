@@ -10,6 +10,7 @@ class auto_hunt(commands.Cog):
         self.client = client
         self.daguildid = 0
         self.dank_memer_id = 270904126974590976
+        self.channel = 0
         self.start_time = None
 
     @commands.command(name="To start the auto hunt, type *pls hunt* and itll begin.")
@@ -19,9 +20,11 @@ class auto_hunt(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         answer = message
-        ctx = message.channel
+        ctx = self.client.get_channel(self.channel)
         try:
             if message.guild.id != self.daguildid:
+                return
+            if message.channel.id != self.channel:
                 return
         except:
             return
@@ -73,6 +76,9 @@ class auto_hunt(commands.Cog):
 
             elif "e\ufeffa\ufefft\ufeff \ufeffl\ufeffe\ufeffa\ufeffd\ufeff \ufeffd\ufeffr\ufeffa\ufeffg\ufeffo\ufeffn\ufeff" in message.content:
                 await ctx.send("eat lead dragon")
+
+            elif "h\ufeffo\ufeffl\ufeffy\ufeff \ufefff\ufeffr\ufeffi\ufeffc\ufeffk\ufeff \ufeffa\ufeff \ufeffd\ufeffr\ufeffa\ufeffg\ufeffo\ufeffn\ufeff" in message.content:
+                await ctx.send('holy frick a dragon')
             
             else:
                 print(message.content.split(" "))
