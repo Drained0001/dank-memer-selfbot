@@ -7,8 +7,8 @@ from os import system
 
 client = commands.Bot(command_prefix="dm!", self_bot=True)
 
-client.load_extension(f'cogs.auto_fish')
-client.load_extension(f'cogs.auto_hunt')
+for cog in list(client.cogs):
+    client.load_extension(f"cogs.{cog}")
 
 @client.command()
 async def unload(ctx, extension):
