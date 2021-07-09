@@ -12,6 +12,7 @@ class auto_fish(commands.Cog):
         self.client = client
         self.daguildid = 0
         self.dank_memer_id = 270904126974590976
+        self.channel = 0
         self.start_time = None
 
     @commands.command(name="To start the auto fish, type *pls fish* and itll begin.")
@@ -21,7 +22,7 @@ class auto_fish(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         answer = message
-        ctx = message.channel
+        ctx = self.client.get_channel(self.channel)
         try:
             if message.guild.id != self.daguildid:
                 return
@@ -32,6 +33,8 @@ class auto_fish(commands.Cog):
         if "pls fish" in message.content.lower():
             if self.start_time == None:
                 self.start_time = datetime.datetime.utcnow()
+            if message.channel.id != self.channel:
+                return
             else:
                 delta_uptime = datetime.datetime.utcnow() - self.start_time
                 hours, remainder = divmod(int(delta_uptime.total_seconds()), 3600)
